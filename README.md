@@ -1,7 +1,7 @@
 tuyaha
 ======
 
-This is is more complex platform for Home Assistant that allows you to control your Tuya Smart devices from Home Assistant via the Tuya cloud.
+This is a more complex platform for Home Assistant that allows you to control your Tuya Smart devices from Home Assistant via the Tuya cloud.
 
 `email` and `password` are your Tuya account details. If you don't have an account, your account will be created with the information provided.
 
