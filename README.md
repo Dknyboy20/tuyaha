@@ -9,6 +9,8 @@ This is a more complex platform for Home Assistant that allows you to control yo
 
 It uses the tuyaapi library (https://github.com/sean6541/tuyaapi) to interface with the Tuya cloud. (No need to install as Home Assistant automatically installs it.)
 
+It will automatically find all devices on your account and add them to Home Assistant.
+
 To use, copy the contents of this repository to "/custom_components" and add config below to configuration.yaml
 
 Config Example:
