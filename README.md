@@ -1,12 +1,11 @@
 Documentation
 =============
 
-::: {.TuyaAPI(email, .password)}
 The base class.
 
 param email
 
-:   Your Tuya account email. (Account will be created if it doesn\'t
+:   Your Tuya account email. (Account will be created if it doesn't
     exist)
 
 param password
@@ -17,7 +16,6 @@ returns
 
 :   A TuyaAPI instance. (Used for TuyaDevice() class)
 
-::: {.method}
 requestapi(command, data, needsid = False)
 
 Make a request to the Tuya API.
@@ -38,9 +36,7 @@ param needsid
 returns
 
 :   API response as dictionary
-:::
 
-::: {.method}
 requestdev(data)
 
 Make a request to a device to setup.
@@ -52,9 +48,7 @@ param data
 returns
 
 :   None
-:::
 
-::: {.method}
 login()
 
 Log the user in. (Called automatically in \_\_init\_\_ of class. Only
@@ -63,9 +57,7 @@ call after call of logout())
 returns
 
 :   None
-:::
 
-::: {.method}
 logout()
 
 Log the user out.
@@ -73,30 +65,26 @@ Log the user out.
 returns
 
 :   None
-:::
 
-::: {.method}
 gentok()
 
 Generate a new device token. (Used when setting up a new device)
 
 returns
 
-:   dictionary: {\'token\': token, \'secret\': secret}
+:   dictionary: {'token': token, 'secret': secret}
 
 Return Values
 
-:   
+:
 
 > -   **token** - Generated token
 > -   **secret** - Token secret
-:::
 
-::: {.method}
 setupdev(ssid, password, token, secret)
 
 Set up a device that is in AP setup mode. (Must be connected to devices
-AP. SSID usually looks something like \"SmartLife\_xxxx\")
+AP. SSID usually looks something like "SmartLife\_xxxx")
 
 param ssid
 
@@ -117,9 +105,7 @@ param secret
 returns
 
 :   None
-:::
 
-::: {.method}
 ldevbytok(token)
 
 Get the id of the device tied to a token.
@@ -131,27 +117,23 @@ param token
 returns
 
 :   Device ID tied to token
-:::
 
-::: {.method}
 ldevbyuser()
 
 List users devices.
 
 returns
 
-:   array: \[{\'devid\': devid, \'sws\': sws, \'name\': name}\]
+:   array: \[{'devid': devid, 'sws': sws, 'name': name}\]
 
 Return Values
 
-:   
+:
 
 > -   **devid** - Device ID
 > -   **sws** - Number of switches on device
 > -   **name** - Device name
-:::
 
-::: {.method}
 getsws(devid)
 
 Get number of switches on device.
@@ -163,9 +145,7 @@ param devid
 returns
 
 :   Number of switches on device
-:::
 
-::: {.method}
 getdevname(devid)
 
 Get device name.
@@ -176,10 +156,8 @@ param devid
 
 returns
 
-:   Device\'s name
-:::
+:   Device's name
 
-::: {.method}
 setdevname(devid, name)
 
 Set device name.
@@ -195,9 +173,7 @@ param name
 returns
 
 :   None
-:::
 
-::: {.method}
 getdps(devid)
 
 Get device status.
@@ -212,13 +188,11 @@ returns
 
 Return Values
 
-:   
+:
 
 > -   **swid** - Switch ID
 > -   **state** - Switch State
-:::
 
-::: {.method}
 setdps(devid, dps)
 
 Set device status.
@@ -229,20 +203,78 @@ param devid
 
 param dps
 
-:   Status. (ex: {\'1\': True})
+:   Status. (ex: {'1': True})
 
 returns
 
 :   None
-:::
-:::
 
-::: {.TuyaDevice(tapi, .devid)}
 Represents a Tuya device.
 
 param tapi
 
 :   An instance of TuyaAPI()
 
-:param de
-:::
+param devid
+
+:   Device ID
+
+returns
+
+:   None
+
+getsws()
+
+Get number of switches on device.
+
+returns
+
+:   Number of switches on device.
+
+getname()
+
+Get the device name.
+
+returns
+
+:   Device's name
+
+setname(name)
+
+Set the device name.
+
+param name
+
+:   New name
+
+returns
+
+:   None
+
+getstate(swid = 1)
+
+Get device state.
+
+param swid
+
+:   Switch ID
+
+returns
+
+:   Switch state
+
+setstate(state, swid = 1)
+
+Set device state.
+
+param state
+
+:   State
+
+param swid
+
+:   Switch ID
+
+returns
+
+:   None
