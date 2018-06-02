@@ -2,6 +2,7 @@ import voluptuous as vol
 from homeassistant.components.switch import SwitchDevice, PLATFORM_SCHEMA
 import custom_components.tuyaha as tuyaha
 import homeassistant.helpers.config_validation as cv
+import time
 
 REQUIREMENTS = ['tuyaapi==4.0']
 DEPENDENCIES = ['tuyaha']
@@ -78,13 +79,11 @@ class TuyaSwitch(SwitchDevice):
 
     def turn_on(self, **kwargs):
         self._tdev.setstate(True, self._swid)
-        self._state = self._tdev.getstate(self._swid)
-        self._state = self._tdev.getstate(self._swid)
+        time.sleep(1)
 
     def turn_off(self, **kwargs):
         self._tdev.setstate(False, self._swid)
-        self._state = self._tdev.getstate(self._swid)
-        self._state = self._tdev.getstate(self._swid)
+        time.sleep(1)
 
     def update(self):
         self._state = self._tdev.getstate(self._swid)
