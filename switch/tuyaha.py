@@ -84,3 +84,5 @@ class TuyaSwitch(SwitchDevice):
 
     def update(self):
         self._state = self._tdev.getstate(self._swid)
+        self._state = self._tdev.getstate(self._swid)
+        self._state = self._tdev.getstate(self._swid)
