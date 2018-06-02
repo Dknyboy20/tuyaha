@@ -78,11 +78,13 @@ class TuyaSwitch(SwitchDevice):
 
     def turn_on(self, **kwargs):
         self._tdev.setstate(True, self._swid)
+        self._state = self._tdev.getstate(self._swid)
+        self._state = self._tdev.getstate(self._swid)
 
     def turn_off(self, **kwargs):
         self._tdev.setstate(False, self._swid)
+        self._state = self._tdev.getstate(self._swid)
+        self._state = self._tdev.getstate(self._swid)
 
     def update(self):
-        self._state = self._tdev.getstate(self._swid)
-        self._state = self._tdev.getstate(self._swid)
         self._state = self._tdev.getstate(self._swid)
