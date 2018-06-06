@@ -4,7 +4,7 @@ import custom_components.tuyaha as tuyaha
 import homeassistant.helpers.config_validation as cv
 import time
 
-REQUIREMENTS = ['tuyaapi==4.0']
+REQUIREMENTS = ['tuyaapi==5.0']
 DEPENDENCIES = ['tuyaha']
 CONF_DEVICE_ID = 'device_id'
 CONF_SWITCHES = 'switches'
@@ -26,7 +26,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     switches = []
     if discovery_info == None:
         devid = config.get(CONF_DEVICE_ID)
-        tdev = tuyaapi.TuyaDevice(tuyaha.tapi, devid)
+        tdev = tuyaapi.TuyaSwitch(tuyaha.tapi, devid)
         devices = config.get(CONF_SWITCHES)
         for id, devconf in devices.items():
             switches.append(
@@ -37,9 +37,9 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
                 )
             )
     else:
-        devid = discovery_info['devid']
-        tdev = tuyaapi.TuyaDevice(tuyaha.tapi, devid)
-        swcount = discovery_info['sws']
+        devid = discovery_info['devId']
+        tdev = tuyaapi.TuyaSwitch(tuyaha.tapi, devid)
+        swcount = tdev.getsws()
         name = discovery_info['name']
         if swcount == 1:
             switches.append(
