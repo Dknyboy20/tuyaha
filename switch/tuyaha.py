@@ -4,7 +4,7 @@ import custom_components.tuyaha as tuyaha
 import homeassistant.helpers.config_validation as cv
 import time
 
-REQUIREMENTS = ['tuyaapi==5.0']
+REQUIREMENTS = ['tuyaapi==6.0']
 DEPENDENCIES = ['tuyaha']
 CONF_DEVICE_ID = 'device_id'
 CONF_SWITCHES = 'switches'
