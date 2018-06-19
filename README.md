@@ -27,3 +27,5 @@ switch:
             friendly_name: Switch 1
             id: 1
 ```
+
+See INSTALL.md for an easy install guide.
