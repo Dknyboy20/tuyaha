@@ -32,3 +32,11 @@ On your computer if running Windows...
 3. Run `python -m pip install tuyaapi`
 4. Run `python tuyasetup.py` and follow the prompts. **You will have to do this for every device you want to add to Home Assistant and once you do this, you can no longer use any app to control your device unless you reset it and then it will no longer work with Home Assistant.**
 5. Restart your Home Assistant device
+
+On your computer if running linux...
+-------------------
+
+1. Run `wget https://raw.githubusercontent.com/sean6541/file/master/tuyasetup.py`
+2. Run `python -m pip install tuyaapi`
+3. Run `python tuyasetup.py` and follow the prompts. **You will have to do this for every device you want to add to Home Assistant and once you do this, you can no longer use any app to control your device unless you reset it and then it will no longer work with Home Assistant.**
+4. Restart your Home Assistant device
