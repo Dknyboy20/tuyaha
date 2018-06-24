@@ -2,7 +2,7 @@ import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.discovery import load_platform
 
-REQUIREMENTS = ['tuyaapi==7.2']
+REQUIREMENTS = ['tuyaapi==7.3']
 DOMAIN = 'tuyaha'
 CONF_USER_EMAIL = 'email'
 CONF_USER_PASSW = 'password'
